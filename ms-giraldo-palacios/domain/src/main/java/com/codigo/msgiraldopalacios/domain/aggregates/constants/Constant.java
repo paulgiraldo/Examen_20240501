@@ -12,10 +12,13 @@ public class Constant {
     public static final String MSJ_OK="Transacción exitosa";
     public static final Integer CODE_EXIST=1001;
     public static final String MSJ_EXIST_EMPRESA="La empresa ya existe";
+    public static final String MSJ_NOEXIST_EMPRESA="La empresa NO existe";
     public static final String MSJ_EXIST_PERSONA="La persona ya existe";
     public static final String MSJ_EXIST_EMAIL="El email ya existe";
     public static final Integer CODE_EMPRESA_NO_EXIST=4001;
     public static final String MSJ_EMPRESA_NO_EXIST="No hay datos";
+    public static final String MSJ_PERSONA_VALIDA01="No ingreso información para Nro.Doc, Email o Empresa_Id";
+
 
     public static final boolean AGENTE_RETENCION_DEFAULT = false;
     public static final boolean AGENTE_RETENCION_TRUE = true;

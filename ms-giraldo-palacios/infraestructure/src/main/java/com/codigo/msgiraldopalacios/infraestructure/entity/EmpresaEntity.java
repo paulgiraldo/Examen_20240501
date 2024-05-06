@@ -68,6 +68,6 @@ public class EmpresaEntity {
     private Timestamp dateDelet;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "empresa", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "empresa_id", cascade = {CascadeType.MERGE, CascadeType.REMOVE})
     private Set<PersonaEntity> personas;
 }

@@ -24,10 +24,10 @@ public class PersonaEntity {
     @Column(name="apellido", nullable = false, length = 255)
     private String apellido;
 
-    @Column(name="tipoDocumento", nullable = false, length = 5)
+    @Column(name="tipodocumento", nullable = false, length = 5)
     private String tipoDocumento;
 
-    @Column(name="numeroDocumento", nullable = false, length = 20, unique = true)
+    @Column(name="numerodocumento", nullable = false, length = 20, unique = true)
     private String numeroDocumento;
 
     @Column(name="email", nullable = false, length = 255, unique = true)
@@ -41,27 +41,29 @@ public class PersonaEntity {
     @Column(name="estado", nullable = false)
     private Integer estado;
 
-    @Column(name = "usuaCrea", length = 255)
+    @Column(name = "usuacrea", length = 255)
     private String usuaCrea;
 
-    @Column(name = "dateCreate")
+    @Column(name = "datecreate")
     private Timestamp dateCreate;
 
-    @Column(name = "usuaModif", length = 255)
+    @Column(name = "usuamodif", length = 255)
     private String usuaModif;
 
-    @Column(name = "dateModif")
+    @Column(name = "datemodif")
     private Timestamp dateModif;
 
-    @Column(name = "usuaDelet", length = 255)
+    @Column(name = "usuadelet", length = 255)
     private String usuaDelet;
 
-    @Column(name = "dateDelet")
+    @Column(name = "datedelet")
     private Timestamp dateDelet;
 
-    //@JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="empresa_id")
+    private Long empresa_id;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+    @JoinColumn(name="empresa_id", nullable = false, insertable=false, updatable=false)
     private EmpresaEntity empresa;
 
 }
